@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hello"
+version = "0.1"
+description = "hello template project"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "fire",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "black",
+    "pytest",
+    "pytest-xdist",
+    "wrapt_timeout_decorator",
+    "pytest-timeout",
+]

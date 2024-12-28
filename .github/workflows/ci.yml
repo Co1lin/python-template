@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  pull_request:
+    # branches: [main]
+    types: [opened, synchronize]
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+
+      - name: Test
+        run: pytest -x tests
