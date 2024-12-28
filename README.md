@@ -49,7 +49,7 @@ mamba activate py310
 conda activate py310
 ```
 
-## src-layout, import, and editable install
+### src-layout, import, and editable install
 
 [src-layout](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#src-layout) is a common style of the package structure.
 
