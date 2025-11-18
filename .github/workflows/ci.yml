@@ -18,4 +18,4 @@ jobs:
       - uses: ./.github/actions/setup
 
       - name: Test
-        run: pytest -x tests
+        run: uv run pytest -x tests

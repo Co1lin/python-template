@@ -3,21 +3,31 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "hello"
+name = "python-template"
 version = "0.1"
-description = "hello template project"
+description = "python-template"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.13"
 dependencies = [
     "fire",
 ]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/hello"]
+
 [project.optional-dependencies]
+
+[tool.uv]
+override-dependencies = [
+]
+
+[dependency-groups]
 dev = [
-    "pre-commit",
     "black",
+    "debugpy",
+    "ipython",
+    "matplotlib",
+    "nvitop",
+    "pre-commit",
     "pytest",
-    "pytest-xdist",
-    "wrapt_timeout_decorator",
-    "pytest-timeout",
 ]
